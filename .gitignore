@@ -1,0 +1,12 @@
+# OS metadata
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/
+.idea/
+
+# Environment / Secrets (Guaranteed zero keys)
+.env
+.env*.local
+*.log

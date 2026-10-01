@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tip & Split Calculator | Rajeshwari Verma</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700&family=Space+Mono:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <main class="calculator-card">
+    <header class="header">
+      <h1>Tip &amp; Split</h1>
+      <p>Zero API Keys &bull; Instant Bill Splitter</p>
+    </header>
+
+    <div class="calculator-grid">
+      <!-- Input Section -->
+      <section class="inputs-section">
+        <!-- Bill Amount -->
+        <div class="form-group">
+          <label for="bill">Bill Total ($)</label>
+          <div class="input-wrapper">
+            <span class="currency-symbol">$</span>
+            <input type="number" id="bill" placeholder="0.00" min="0" step="0.01" />
+          </div>
+        </div>
+
+        <!-- Tip % Selector -->
+        <div class="form-group">
+          <label>Select Tip %</label>
+          <div class="tip-buttons">
+            <button type="button" class="tip-btn" data-tip="5">5%</button>
+            <button type="button" class="tip-btn" data-tip="10">10%</button>
+            <button type="button" class="tip-btn active" data-tip="15">15%</button>
+            <button type="button" class="tip-btn" data-tip="20">20%</button>
+            <button type="button" class="tip-btn" data-tip="25">25%</button>
+            <input type="number" id="custom-tip" placeholder="Custom" min="0" max="100" />
+          </div>
+        </div>
+
+        <!-- Number of People -->
+        <div class="form-group">
+          <div class="label-row">
+            <label for="people">Number of People</label>
+            <span id="people-error" class="error-msg">Cannot be zero</span>
+          </div>
+          <div class="input-wrapper">
+            <span class="icon">👥</span>
+            <input type="number" id="people" value="1" min="1" step="1" />
+          </div>
+        </div>
+      </section>
+
+      <!-- Output Summary Section -->
+      <section class="summary-section">
+        <div class="summary-rows">
+          <div class="summary-row">
+            <div class="summary-label">
+              <span>Tip Amount</span>
+              <small>/ person</small>
+            </div>
+            <div id="tip-per-person" class="summary-amount">$0.00</div>
+          </div>
+
+          <div class="summary-row">
+            <div class="summary-label">
+              <span>Total Amount</span>
+              <small>/ person</small>
+            </div>
+            <div id="total-per-person" class="summary-amount large">$0.00</div>
+          </div>
+
+          <div class="divider"></div>
+
+          <div class="summary-sub-row">
+            <span>Overall Total Bill:</span>
+            <strong id="overall-total">$0.00</strong>
+          </div>
+          <div class="summary-sub-row">
+            <span>Overall Total Tip:</span>
+            <strong id="overall-tip">$0.00</strong>
+          </div>
+        </div>
+
+        <button id="reset-btn" class="reset-btn" disabled>Reset</button>
+      </section>
+    </div>
+
+    <footer class="card-footer">
+      <span>Built with Vanilla JavaScript &bull; By <a href="https://github.com/RajeshwariVerma17" target="_blank" rel="noopener noreferrer">Rajeshwari Verma</a></span>
+    </footer>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
